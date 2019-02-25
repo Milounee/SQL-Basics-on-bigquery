@@ -1,0 +1,38 @@
+SLQ BASICS USING BIGQUERY CLOUD PLATFORM:
+I chose a table from the open data sources available on google cloud about “ NAMES IN USA” 
+1)	Every name from the state AL
+#SELECT * from `bigquery-public-data.usa_names.usa_1910_2013` limit 100
+#SELECT * FROM `bigquery-public-data.usa_names.usa_1910_2013`
+#WHERE state= "AL"
+2)	Number of times a name is repeated to be over 90
+#SELECT * FROM `bigquery-public-data.usa_names.usa_1910_2013`
+#WHERE number> 90
+3)	All male names
+#SELECT * FROM `bigquery-public-data.usa_names.usa_1910_2013`
+#where gender="M"
+4)	 Every female after year 1900
+#SELECT * FROM `bigquery-public-data.usa_names.usa_1910_2013`
+#WHERE gender="F" AND year> 1900
+5)	Order all females over year 1900 in descending order
+#SELECT * FROM `bigquery-public-data.usa_names.usa_1910_2013`
+#WHERE gender="F" AND year> 1900
+#order by name desc 
+6)	Max number of times the name was used
+#SELECT max(number) FROM `bigquery-public-data.usa_names.usa_1910_2013`
+7)	Max number of time grouped by name
+#SELECT name, max(number) 
+#FROM `bigquery-public-data.usa_names.usa_1910_2013` 
+#group by name
+8)	Name chosen between the range of 100-600
+
+#SELECT number FROM `bigquery-public-data.usa_names.usa_1910_2013`
+#where number between 100 and 600
+9)	Average number of times names were used
+#SELECT number avg FROM `bigquery-public-data.usa_names.usa_1910_2013`
+
+#SELECT number avg FROM `bigquery-public-data.usa_names.usa_1910_2013`
+#group by number
+10)	Selection of data about “ruth’
+
+SELECT* FROM `bigquery-public-data.usa_names.usa_1910_2013`
+where name ="Ruth"
